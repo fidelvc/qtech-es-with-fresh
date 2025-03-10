@@ -1,4 +1,4 @@
-const kv = await Deno.OpenKv();
+const kv = await Deno.openKv();
 
 export interface Contact {
   name: string;
@@ -14,5 +14,5 @@ export async function getContact() {
 }
 
 export async function setContact(newContact: Contact) {
-  await kv.set(PREFIX, newContact);
+  await kv.set([PREFIX, newContact.email], newContact);
 }
