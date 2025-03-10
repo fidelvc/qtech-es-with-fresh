@@ -6,13 +6,13 @@ export interface Contact {
   message: string;
 }
 
-const PREFIX = ["contacts"];
+const PREFIX = "contacts";
 
-export async function getContact() {
-  const res = await kv.get<Contact>(PREFIX);
-  return res.value;
+export async function getContact(email: string): Promise<Contact | null> {
+  const res = await kv.get<Contact>([...PREFIX, email]);
+  return res.value || null;
 }
 
-export async function setContact(newContact: Contact) {
+export async function setContact(newContact: Contact): Promise<void> {
   await kv.set([PREFIX, newContact.email], newContact);
 }
