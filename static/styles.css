@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'MyWebFont';
-  src: url(./Rubik-Regular.ttf) format('truetype');
+  font-family: "MyWebFont";
+  src: url(./Rubik-Regular.ttf) format("truetype");
 }
 
-*, *::before, *::after{
+*, *::before, *::after {
   /* inherit, permitirá que todos los elementos puedan heredar este atributo */
   box-sizing: inherit;
 }
@@ -12,7 +12,7 @@ body {
   /* border-box aplicado sobre body hará que todos sus hijos la hereden */
   box-sizing: border-box;
   margin: 0;
-  font-family: 'MyWebFont', sans-serif;
+  font-family: "MyWebFont", sans-serif;
   line-height: 1.2;
 }
 
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0.5em 0.75rem;
-  font-family: 'Noto Sans' sans-serif;
+  font-family: "Noto Sans" sans-serif;
 }
 
 figure {
@@ -33,16 +33,15 @@ figure {
   padding: 0.75rem;
   border-radius: 0.5rem;
   & img {
-      background-size:cover;
-      width: 100%;
-      height: auto;
+    background-size: cover;
+    width: 100%;
+    height: auto;
   }
 }
 
-
 /* Estilos de Layout */
 
-.layout{
+.layout {
   padding: 0.5rem;
   height: 100dvh;
   background: #f9f9f9;
@@ -54,63 +53,61 @@ figure {
     ". content content ."
     "footer footer footer footer";
   gap: 1rem;
-  & .logo{
+  & .logo {
     grid-area: logo;
   }
-  & .navbar{
+  & .navbar {
     grid-area: navbar;
   }
-  & .content{
+  & .content {
     grid-area: content;
   }
-  & .footer{
+  & .footer {
     grid-area: footer;
   }
 }
 
 /* NAVBAR */
 
-  .navbar{
-    
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: end;
+  gap: 0.5rem;
+
+  & a {
+    text-decoration: none;
+    text-align: center;
+    color: rgb(125, 125, 125);
+    border-bottom: 1px solid gray;
+  }
+}
+
+@media (max-width: 40rem) {
+  .layout {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-rows: auto 1fr 3rem;
+    grid-template-areas:
+      "logo . ."
+      "content content content"
+      "navbar navbar navbar";
+  }
+  .navbar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-content: end;
+    align-content: center;
+    border-bottom: none;
     gap: 0.5rem;
-
-    & a{
-      text-decoration: none;
-      text-align: center;
-      color: rgb(125, 125, 125);
+    & a {
+      font-size: small;
       border-bottom: 1px solid gray;
+      background-color: transparent;
     }
   }
 
-  @media (max-width: 40rem) {
-    .layout {
-      height: 100dvh;
-      display: grid;
-      grid-template-columns: 2fr 8fr 2fr;
-      grid-template-rows: auto 1fr 3rem;
-      grid-template-areas: "logo . ."
-                           "content content content"
-                           "navbar navbar navbar";
-
-    }
-    .navbar{
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      align-content: center;
-      border-bottom: none;
-      gap: 0.5rem;
-      & a{
-        font-size: small;
-        border-bottom: 1px solid gray;
-        background-color: transparent;
-      }
-    }
-    
-    .footer{
-      display: none;
-    }
-
+  .footer {
+    display: none;
   }
+}
