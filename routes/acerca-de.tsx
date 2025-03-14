@@ -17,9 +17,42 @@ export const handler: Handlers = {
 
 export default function AcercaDe() {
   return (
-    <main>
-      <h1>Acerca de</h1>
-      <p>This is the about page</p>
-    </main>
+    <div className="page">
+      <section>
+        <article>
+          <header>
+            <h1>Acerca de</h1>
+            <p>Este es un servicio técnico enfocado en el mantenimiento de equipos para el sector de la estética profesional. Estamos activos de forma autónoma desde el 2016 y damos soporte a multitud de tecnologías y marcas</p>
+          </header>
+          <hr />
+          
+            <dl>
+              <dt>Lista de servicios</dt>
+              <dd>Revisión de equipos y partes de máquina</dd>
+              <dd>Mantenimientos preventivos y correctivos</dd>
+              <dd>Adaptaciones</dd>
+            </dl>
+          <details>
+            <summary>Resumen del contenido</summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minus amet, excepturi soluta at in sequi provident sapiente sunt suscipit, alias officiis? Dolorum saepe asperiores dolorem impedit, mollitia aperiam earum?</p>
+            <h2>Un valle en Barcelona</h2>
+            <figure>
+            <img src="https://picsum.photos/500/300" alt="" />
+            <figcaption>Información del logo de fresh</figcaption>
+          </figure>
+          </details>
+          
+        </article>
+        <article>
+          <header>
+            <h2>Un valle en Barcelona</h2>
+            <figure>
+            <img src="https://picsum.photos/500/300" alt="" />
+            <figcaption>Información del logo de fresh</figcaption>
+          </figure>
+          </header>
+        </article>
+      </section>
+    </div>
   );
 }
