@@ -1,3 +1,6 @@
+
+/* ------------ Global styles ------------- */ 
+
 @font-face {
   font-family: "MyWebFont";
   src: url(./Rubik-Regular.ttf) format("truetype");
@@ -8,17 +11,33 @@
   box-sizing: inherit;
 }
 
+html {
+  text-size-adjust: 100%;
+}
 body {
   /* border-box aplicado sobre body hará que todos sus hijos la hereden */
   box-sizing: border-box;
   margin: 0;
   font-family: "MyWebFont", sans-serif;
   line-height: 1.2;
+  font-size: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0.5em 0.75rem;
+}
+h1{
+  font-size: 2.5em;
+}
+h2{
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.8em;
+}
+h4 {
+  font-size: 1.4em;
 }
 
 p {
@@ -27,18 +46,139 @@ p {
   font-family: "Noto Sans" sans-serif;
 }
 
-figure {
-  background-color: #44444425;
+pre {
+  font-family: monospace;
+  padding: 0.5em 0.75rem;
+}
+
+small {
+  font-size: small;
+}
+
+ol, ul {
+  list-style-position: inside;
   margin: 0;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  & img {
-    background-size: cover;
-    width: 100%;
-    height: auto;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0.5em 1.5em;
+}
+
+dl {
+  margin: 0;
+}
+dt {
+  margin: 0;
+  padding: 0.5em 0.75rem;
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+  padding: 0.5em 1.5rem;
+  line-height: 1.5;
+
+}
+
+table {
+  /* A diferencia del contenido, el contenedor no necesita padding, pero quedaría sí margin para alinear verticalmente */
+  margin: 0.5em 0.75rem;
+  padding: 0;
+  & th {
+    padding: 0.5em 0.75rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  & td {
+    padding: 0.5em 0.75rem;
+    margin: 0;
   }
 }
 
+details {
+  margin: 0.5em 0.75rem;
+  /*TODO: Evaluar el contenido para aplicar margin adicional */
+  border-left: 1px solid gray;
+}
+
+details[open] summary~* {
+  animation: sweep 0.4s ease-in;
+  & hr {
+    padding: 0;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin: 0;
+  }
+  100%{
+    opacity: 1;
+    margin: 0;
+  }
+}
+summary {
+  list-style-position: inside;
+  margin: 0.5em 0.75rem;
+  font-weight: bold;
+  
+}
+
+figure {
+  margin: 0 0.75rem;
+  padding: 0 0.75rem;
+  border-radius: 0.5rem;
+  & img {
+    background-size: cover;
+  }
+  & figcaption {
+    font-size: small;
+    padding: 0.5em 0rem;
+    color: #444;
+  }
+}
+img, video{
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  /* Add the correct box sizing in Firefox */
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+
+input {
+  padding: 0.5em 0.75rem;
+  border-radius: 0.25rem;
+}
+input:not(textarea){
+  line-height: 1;
+  height: 2.25rem;
+}
+input[type="file"] {
+  font-size: 0.9em;
+  padding-top: 0.35rem;
+}
+input[readonly] {
+  border-style: dotted;
+  cursor: not-allowed;
+  color: #777;
+}
+input[disabled] {
+  --input-border: #ccc;
+
+  background-color: #eee;
+  cursor: not-allowed;
+}
+textarea .input {
+  resize: vertical;
+}
 /* Estilos de Layout */
 
 .layout {
@@ -74,7 +214,7 @@ figure {
   grid-template-columns: repeat(5, 1fr);
   align-content: end;
   gap: 0.5rem;
-
+  max-height: 4rem;
   & a {
     text-decoration: none;
     text-align: center;
@@ -82,7 +222,7 @@ figure {
     border-bottom: 1px solid gray;
   }
 }
-
+/* Estilos para móvil */
 @media (max-width: 40rem) {
   .layout {
     height: 100dvh;
@@ -100,10 +240,15 @@ figure {
     align-content: center;
     border-bottom: none;
     gap: 0.5rem;
+    position: sticky;
+    bottom: 0;
+    max-height: 3rem;
+    background-color: #f9f9f9;
     & a {
       font-size: small;
       border-bottom: 1px solid gray;
-      background-color: transparent;
+      
+      padding: 0.5em 0;
     }
   }
 
