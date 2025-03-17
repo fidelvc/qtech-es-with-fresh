@@ -49,6 +49,9 @@ p {
 pre {
   font-family: monospace;
   padding: 0.5em 0.75rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  tab-size: 4;
 }
 
 small {
@@ -182,9 +185,8 @@ textarea .input {
 /* Estilos de Layout */
 
 .layout {
-  padding: 0.5rem;
+  padding: 0.5em 0;
   height: 100dvh;
-  background: #f9f9f9;
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto 8fr 1fr;
@@ -198,12 +200,39 @@ textarea .input {
   }
   & .navbar {
     grid-area: navbar;
+    border-bottom: 1px solid gray;
   }
   & .content {
     grid-area: content;
+    overflow-y: scroll;
   }
   & .footer {
     grid-area: footer;
+  }
+}
+
+/* Logo */
+
+.logo {
+  background: radial-gradient(#f9f9f9, #e4e3e3);
+  border-radius: 999rem 999rem 0 0rem;
+  
+  height: 5rem;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 0em 0.75rem;
+  padding: 0 1.5rem;
+  & span{
+    
+    border-radius: 4px;
+    line-height: 1.5;
+    font-size:1.5rem;
+    color: gray;
+  }
+  & span:first-letter {
+    color: royalblue;
   }
 }
 
@@ -214,23 +243,30 @@ textarea .input {
   grid-template-columns: repeat(5, 1fr);
   align-content: end;
   gap: 0.5rem;
-  max-height: 4rem;
+  height: 5rem;
   & a {
     text-decoration: none;
     text-align: center;
     color: rgb(125, 125, 125);
-    border-bottom: 1px solid gray;
   }
 }
-/* Estilos para móvil */
+
+
+footer{
+  background-color: #8ca1d7;
+  color: #f9f9f9;
+}
+
+
 @media (max-width: 40rem) {
+  /* Estilos para móvil */
   .layout {
     height: 100dvh;
     display: grid;
     grid-template-columns: 2fr 8fr 2fr;
     grid-template-rows: auto 1fr 3rem;
     grid-template-areas:
-      "logo . ."
+      ". . ."
       "content content content"
       "navbar navbar navbar";
   }
