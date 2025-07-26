@@ -190,8 +190,6 @@ textarea .input {
   height: 100dvh;
   background-color: #f9f9f9;
 }
-/* Estilos de Layout */
-
 
 .grid-page {
   display: grid;
@@ -218,7 +216,7 @@ textarea .input {
   & a {
     text-decoration: none;
     text-align: center;
-    color: rgb(125, 125, 125);
+    color: rgb(7, 55, 53);
   }
 }
 
