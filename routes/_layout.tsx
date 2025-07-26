@@ -2,8 +2,10 @@ import { PageProps } from "$fresh/server.ts";
 
 export default function Layout({ Component }: PageProps) {
   return (
-    <div class="layout">
-      
+    <div class="page grid-page">
+      <main class="content">
+        <Component />
+      </main>
       <nav class="navbar">
         <a href="/">Inicio</a>
         <a href="/servicios">Servicios</a>
@@ -11,12 +13,7 @@ export default function Layout({ Component }: PageProps) {
         <a href="/acerca-de">Acerca de</a>
         <a href="/contactar">Contactar</a>
       </nav>
-      <main class="content">
-        <Component />
-      </main>
-      <footer class="footer">
-        <p>Footer</p>
-      </footer>
+
     </div>
   );
 }
