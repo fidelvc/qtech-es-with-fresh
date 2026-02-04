@@ -14,6 +14,7 @@ export default function App({ Component }: PageProps) {
           name="keywords"
           content="Reparación de criolipólisis, reparación de picosecond, reparación de láser, reparación de radiofrecuencia y cavitación"
         />
+        <meta name="robots" content="noindex" />
         <meta name="author" content="Fidel Verduguez" />
         <meta name="copyright" content="Todos los derechos reservados 2025" />
         <link rel="stylesheet" href="/styles.css" />
