@@ -9,6 +9,7 @@
     "preview": "deno run -A --unstable-kv main.ts",
     "update": "deno run -A --unstable-kv -r https://fresh.deno.dev/update ."
   },
+  "unstable": ["kv"],
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
@@ -19,7 +20,11 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "$std/": "https://deno.land/std@0.216.0/"
   },
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "lib": ["deno.window", "deno.unstable"]
+  },
   "deploy": {
     "project": "178bb639-9c8e-44a2-933c-bfd7e8340c9d",
     "exclude": ["**/node_modules"],

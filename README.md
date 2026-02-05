@@ -14,3 +14,30 @@ deno task start
 ```
 
 This will watch the project directory and restart as necessary.
+
+## Development
+
+To develop your Fresh project, you can use the following commands:
+
+```
+deno task dev
+```
+
+This will start the development server and open your project in your default browser.
+
+```
+deno task build
+```
+
+This will build your project for production.
+
+```
+deno task deploy
+```
+
+This will deploy your project to a server.
+
+## IDE Settings
+
+### Zed
+https://zed.dev/docs/languages/deno
