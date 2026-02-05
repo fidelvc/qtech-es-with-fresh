@@ -13,6 +13,12 @@
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
+    "@/": "./",
+    "@components/": "./components/",
+    "@islands/": "./islands/",
+    "@routes/": "./routes/",
+    "@static/": "./static/",
+    "@utils/": "./utils/",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
@@ -24,11 +30,5 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "lib": ["deno.window", "deno.unstable"]
-  },
-  "deploy": {
-    "project": "178bb639-9c8e-44a2-933c-bfd7e8340c9d",
-    "exclude": ["**/node_modules"],
-    "include": [],
-    "entrypoint": "main.ts"
   }
 }
