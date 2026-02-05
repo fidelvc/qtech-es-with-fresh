@@ -9,9 +9,16 @@
     "preview": "deno run -A --unstable-kv main.ts",
     "update": "deno run -A --unstable-kv -r https://fresh.deno.dev/update ."
   },
+  "unstable": ["kv"],
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
+    "@/": "./",
+    "@components/": "./components/",
+    "@islands/": "./islands/",
+    "@routes/": "./routes/",
+    "@static/": "./static/",
+    "@utils/": "./utils/",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
@@ -19,11 +26,9 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "$std/": "https://deno.land/std@0.216.0/"
   },
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
-  "deploy": {
-    "project": "178bb639-9c8e-44a2-933c-bfd7e8340c9d",
-    "exclude": ["**/node_modules"],
-    "include": [],
-    "entrypoint": "main.ts"
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "lib": ["deno.window", "deno.unstable"]
   }
 }

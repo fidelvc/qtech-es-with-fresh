@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main
+    branches: [main]
 
 jobs:
   deploy:
@@ -32,5 +32,3 @@ jobs:
           project: "qtech-es"
           entrypoint: "main.ts"
           root: "."
-          
-          
