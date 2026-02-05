@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
-import type { Contact } from "../../../utils/db.ts";
-import { setContact } from "../../../utils/db.ts";
+import type { Contact } from "@utils/db.ts";
+import { setContact } from "@utils/db.ts";
 
 export const handler: Handlers = {
   async POST(req) {

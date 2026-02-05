@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
-import { ContactForm } from "../components/ContactForm/ContactForm.tsx";
-import { PopUp } from "../components/ContactForm/PopUp.tsx";
+import { ContactForm } from "@components/ContactForm/ContactForm.tsx";
+import { PopUp } from "@components/ContactForm/PopUp.tsx";
 
 export default function Form() {
   const [showPopup, setShowPopup] = useState(false);

@@ -1,4 +1,4 @@
-import Form from "../islands/Form.tsx";
+import Form from "@islands/Form.tsx";
 
 export default function FormPage() {
   return (
